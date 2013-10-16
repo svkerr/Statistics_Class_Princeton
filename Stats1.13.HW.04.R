@@ -27,8 +27,24 @@ summary(model3)
 # What is the standardized regression coefficient for years of professional experience, predicting salary?
 model1.z <- lm(scale(data$salary) ~ scale(data$years))
 summary(model1.z)
+
+model2.z <- lm(scale(data$salary) ~ scale(data$courses))
+summary(model2.z)
 # or maybe the question is in regards to the multiple linear regression problem previously posed?
 # I will go with this one
 model3.z <- lm(scale(data$salary) ~ scale(data$years) + scale(data$courses))
 summary(model3.z)
 
+data$model3_pred <- fitted(model3)
+data$model3_res <- resid(model3)
+
+# What is the mean of the salary distribution predicted by the model including both years of professional experience and courses completed as predictors? (with 0 decimal places)
+mean(data$model3_pred)
+describe(data$model3_pred)
+
+# What is the mean of the residual distribution for the model predicting salary from both years of professional experience and courses completed? (with 0 decimal places)
+mean(data$model3_res)
+describe(data$model3_res)
+
+# Are the residuals from the regression model with both predictors normally distributed?
+hist(data$model3_res)
