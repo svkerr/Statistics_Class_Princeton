@@ -106,4 +106,15 @@ aov.model <- aov(wm.t$gain ~ wm.t$cond)
 summary(aov.model)
 
 # save results in a table to illustrate calculation of effect size
+aov.table <- summary(aov.model)
+aov.table
 
+# Effect size for ANOVA
+ss <- aov.table[[1]]$"Sum Sq"
+eta.sq <- ss[1]/(ss[1] + ss[2])
+eta.sq
+# Or: etasq = proportion of variance in gain accounted for by our treatment
+etaSquared(aov.model, anova=T)
+
+# Conduct post-hoc tests to evaluate all pairwise comaprisons
+TukeyHSD(aov.model)
