@@ -1,0 +1,9 @@
+Non-parametric statistics do not assume that the data or population have any characteristic structure (e.g., distributions etc.,).
+
+Try Wilcoxon (non-parametric) dependent, signed-rank test in-lieu of previous t-tests.
+
+Why - because we cannot assume a normal distribution - check histogram
+
+Wilcoxan Null Hypothesis is that: The 'median' difference between pairs = 0
+
+
