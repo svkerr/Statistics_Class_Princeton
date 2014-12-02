@@ -86,3 +86,4 @@ abline(lm(predict(lrfit) ~ BL$specdet), col="blue", lwd=2)
 
 plot(BL$incap, predict(lrfit), bty="n")
 abline(lm(predict(lrfit) ~ BL$incap), col="blue", lwd=2)
+
